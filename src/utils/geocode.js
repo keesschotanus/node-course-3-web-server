@@ -1,5 +1,8 @@
 const request = require('request');
-require('dotenv').config();
+
+if (!process.env.FORECAST_KEY) {
+    require('dotenv').config();
+}
 
 debugger
 const geocode = (address, callback) => {
