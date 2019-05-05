@@ -18,7 +18,12 @@ weatherForm.addEventListener('submit', e => {
                 messageOne.textContent = data.error;
             } else {
                 messageOne.textContent = data.location;
-                messageTwo.textContent = data.forecast;
+                
+                // console.log(data.weather);
+                const current = data.weather.currently;
+                const today = data.weather.daily.data[0];
+                messageTwo.textContent = `Temperatuur: ${current.temperature}. Gevoelstemperatuur:${current.apparentTemperature}. Kans op regen: ${current.precipProbability * 100}% ${current.summary}. `
+                messageTwo.textContent += `Min temp: ${today.temperatureLow}. Max temp: ${today.temperatureMax}`
             }
         });
     });
