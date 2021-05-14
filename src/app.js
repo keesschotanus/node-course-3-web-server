@@ -26,7 +26,7 @@ app.get('/about', (req, res) => {
         name: 'Kees'
     });
 });
-
+0
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
