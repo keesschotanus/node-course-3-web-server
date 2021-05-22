@@ -1,4 +1,4 @@
-const request = require('request');
+const request = require('postman-request');
 
 if (!process.env.FORECAST_KEY) {
     require('dotenv').config();
