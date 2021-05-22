@@ -5,7 +5,7 @@ if (!process.env.FORECAST_KEY) {
 }
 
 const forecast = (lat, lng, callback) => {
-    const url = `https://api.darksky.net/forecast/${process.env.FORECAST_KEY}/${lat},${lng}?units=si&lang=nl`;
+    const url = `http://api.weatherstack.com/current?access_key=${process.env.FORECAST_KEY}&query=${lat},${lng}`;
 
     request({url, json: true}, (error, response, body) => {
         if (error) {
